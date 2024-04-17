@@ -298,6 +298,7 @@ function App() {
                                 {column.items.length > 0
                                   ? column.items.map((item, index) => {
                                       return (
+                                        // added
                                         // Conditionally render Draggable based on column name
                                         // column.name !== "Complete" ? (
                                           <DraggableItem
