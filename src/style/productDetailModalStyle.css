@@ -1,0 +1,59 @@
+.pryority-div{
+    display:flex;
+}
+.modal-header-name{
+    text-align: center;
+}
+.modal-body{
+    padding-left:20px;
+    padding-right:20px;
+}
+.description-tital{
+    font-size: 14px;
+    margin-bottom:20px;
+    color:rgb(122, 120, 120);
+}
+.data-div{
+    color:rgb(122, 120, 120);
+    margin-right:50px;
+}
+.select-option{
+    border:none;
+}
+.date-picker{
+    .react-datepicker-wrapper{
+        .react-datepicker__input-container{
+            input{
+                border:none;
+                margin-left:25px;
+            }
+        }
+    }
+}
+.save-btn{
+    color:skyblue;
+}
+.save-btn:hover{
+    background: skyblue;
+    color:white;
+}
+.footer-btn{
+    /* display:flex;
+    align-items: center; */
+    justify-content: space-between;
+}
+.del-btn{
+    background:rgb(255, 246, 247);
+    color:lightpink;
+}
+.del-btn:hover{
+    color:rgb(237, 106, 126);
+    background-color:lightpink;
+}
+.error-message{
+    color:rgb(237, 106, 126);
+}
+.input-field{
+    border:none;
+    width:100%;
+}

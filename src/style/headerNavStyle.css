@@ -1,0 +1,46 @@
+.main-navcontainer {
+  justify-content: end !important;
+}
+.field-container {
+  display: flex;
+  cursor: pointer;
+  margin-left:20px;
+}
+.eye-icon{
+    color:gray;
+    margin-right:10px;
+}
+.drop-icon{
+    color:gray;
+    margin-left:10px;
+}
+.field-data{
+    position: absolute;
+    right: 20px;
+    top:3px;
+    z-index: 2;
+    width: 200px;
+    background: #fff;
+    padding: 20px;
+}
+.card-2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+.filds-style-onclick{
+    color:black;
+    font-weight: 700;
+}
+.active-eye-icon{
+    color:black;
+    margin-right:10px;
+}
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sticky-top {
+    position:fixed;
+    width:100%;
+    /* position: -webkit-sticky;
+    position: sticky;
+    top: 0px; */
+    z-index: 1020;
+  }
+}
