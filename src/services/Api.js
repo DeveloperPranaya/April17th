@@ -3,80 +3,9 @@ import axios from "axios";
 export const URL = "http://localhost:4000/contract"
 
 
-
-
-// export const fetchContracts = async (groupByOwner, setColumns) => {
-//   try {
-//     const response = await axios.get(URL);
-//     const contractsData = response.data;
-
-//     let groupedData = null;
-
-//     if (groupByOwner) {
-//       const data = {
-//                   Open: { name: "Open", item: {} },
-//                   "In Process": { name: "In Process", item: [] },
-//                   Review: { name: "Review", item: {} },
-//                   Complete: { name: "Complete", item: {} },
-//                 };
-//       // Organize contracts by owner name and then by status within each owner
-//       groupedData = contractsData.reduce((acc, contract) => {
-//         const owner = contract.Owner;
-//         const status = contract.Status;
-//       //  console.log("acc[owner][status]:-",acc[owner][status])     
-
-//         // Ensure that acc[owner] is always an object
-//         if (!acc[owner]) {
-//           acc[owner] = [];
-//         }
-
-//         // Ensure that acc[owner][status] is always an array
-//         if (!Array.isArray(acc[owner][status])) {
-//           acc[owner][status] = [];
-//         }
-
-//         // Push the contract into the appropriate owner's status array
-//         acc[owner][status].push(contract);
-//         return acc;
-//       }, {});
-//     } else {
-//       // Organize contracts by status if groupByOwner is false
-//       groupedData = contractsData.reduce((acc, contract) => {
-//         const status = contract.Status;
-//         if (!acc[status]) {
-//           acc[status] = [];
-//         }
-//         acc[status].push(contract);
-//         return acc;
-//       }, {});
-//     }
-
-//     // Convert grouped data to columns
-//     const newColumns = {};
-//     if (groupByOwner) {
-//       for (const [owner, statuses] of Object.entries(groupedData)) {
-//         const ownerItems = {};
-//         for (const [status, items] of Object.entries(statuses)) {
-//           ownerItems[status] = { name: status, items: items };
-//         }
-//         newColumns[owner] = ownerItems;
-//       }
-//     } else {
-//       for (const [key, value] of Object.entries(groupedData)) {
-//         newColumns[key] = { name: key, items: value };
-//       }
-//     }
-
-//     // Set the columns state
-//     setColumns(newColumns);
-//   } catch (error) {
-//     console.error('Error fetching data:', error);
-//   }
-// };
-
 export const fetchContracts = async (groupByOwner, setColumns) => {
   try {
-    const response = await axios.get("http://localhost:4000/contract");
+    const response = await axios.get(URL);
     const contractsData = response.data;
 
     let groupedData = null;
@@ -191,7 +120,7 @@ export const fetchContracts = async (groupByOwner, setColumns) => {
   
     // Send a DELETE request to remove the task from the server
     axios
-      .delete(`http://localhost:4000/contract/${taskId}`)
+      .delete(`${URL}${taskId}`)
       .then((response) => {
         // Handle response if needed
       })
@@ -219,7 +148,7 @@ export const fetchContracts = async (groupByOwner, setColumns) => {
   
     // Send a PUT request to update the task on the server
     axios
-      .put(`http://localhost:4000/contract/${updatedTask.id}`, updatedTask)
+      .put(`${URL}${updatedTask.id}`, updatedTask)
       .then((response) => {
         console.log("Task updated successfully:", response.data);
         // Update the state with the updated columns
