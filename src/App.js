@@ -13,8 +13,8 @@ import {
   createNewData,
   updateTask,
   deleteTask,
+  onDragEnd
 } from "./services/Api";
-import { onDragEnd } from "./constants/functionalConstant";
 import DraggableItem from "./components/DragggableItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faCaretDown,faCaretUp} from "@fortawesome/free-solid-svg-icons";
